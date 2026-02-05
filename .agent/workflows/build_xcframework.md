@@ -1,10 +1,10 @@
 ---
-description: Automatically builds and packages CerezgoSDK as an XCFramework
+description: Automatically builds and packages the project SDK as an XCFramework
 ---
 
 # Build XCFramework Workflow
 
-This workflow executes the build script to generate `CerezgoSDK.xcframework`.
+This workflow executes the build script to generate the XCFramework (e.g., `[TargetName].xcframework`).
 
 // turbo-all
 

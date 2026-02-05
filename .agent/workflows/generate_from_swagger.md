@@ -8,20 +8,21 @@ This workflow automates the creation of networking code from Swagger documentati
 
 ## Pre-requisites
 
-- **Credentials**: `swagger_admin` / `SwaggerPass2024` (for `api.cerezgo.com`).
 - **Target Module**: Must be an existing Kit or Feature (e.g., `AuthKit`).
 
 ## Steps
 
 1.  **Identify Resources**
-    - Ask the user for the **Swagger URL** if not provided.
-    - *Default*: `https://api.cerezgo.com/api-docs/cookie/index.html` (Note: Agent must locate the actual `.json` endpoint, usually by appending `/v1/swagger.json` or inspecting network traffic).
+    - Ask the user for the **Swagger UI** or **JSON** URL.
+    - Note: Agent must locate the actual `.json` endpoint (e.g. `/v1/swagger.json` or via network inspection) if a UI URL is provided.
 
 2.  **Fetch Swagger JSON**
-    - Use `curl` with Basic Auth to download the JSON schema.
+    - Use `curl` to download the JSON schema.
     - Example:
       ```bash
-      curl -u "swagger_admin:SwaggerPass2024" [JSON_URL] > swagger.json
+      curl [JSON_URL] > swagger.json
+      # If auth is required:
+      # curl -u "username:password" [JSON_URL] > swagger.json
       ```
 
 3.  **Analyze & Plan**
